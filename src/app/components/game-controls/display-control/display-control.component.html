@@ -1,0 +1,52 @@
+<div class="row no-gutters display-controls">
+	<!-- <div class="col-12 display-controls"> -->
+		<!-- rotate controls -->
+		<div class="col-12 no-gutters p-2 pb-2" >
+			<!-- <div class="col-12 no-gutters pb-2">
+				
+				<a class="text-center reset float-right"
+				(click)="resetDisplay()">
+					<fa [name]="'undo'" [size]="1"></fa>
+				</a>
+			</div> -->
+			
+			<a class="text-center top shiny-1 round hvr-blue-1"
+			(click)="rotateX(1);">
+				<fa [name]="'angle-double-up'" [size]="1" [fw]="true"></fa>
+			</a>
+			<a class="text-center left shiny-1 round hvr-blue-1"
+			(click)="rotateY(-1);">
+				<fa [name]="'angle-double-left'" [size]="1"></fa>
+			</a> 
+			<a class="text-center reset hvr-blue-1"
+				(click)="resetDisplay()">
+					<fa [name]="'undo'" [size]="1"></fa>
+				</a>
+			<a class="text-center right shiny-1 round hvr-blue-1"
+			(click)="rotateY(1);">
+				<fa [name]="'angle-double-right'" [size]="1"></fa>
+			</a>
+			<a class="text-center bottom shiny-1 round hvr-blue-1"
+			(click)="rotateX(-1);">
+				<fa [name]="'angle-double-down'" [size]="1"></fa>
+			</a>
+			
+		</div>
+		<div class="col-12 no-gutters mt-2 zoom">
+			<fa [name]="'search-minus'" class="fa-flip-horizontal"></fa>
+			<fa [name]="'search-plus'"></fa>
+			<ion-range-slider 
+				#sliderElement
+				type="single"
+				[min]="0"
+				[max]="100"
+				from="50"
+				hide_min_max="true"
+				hide_from_to="true"
+				(onUpdate)="zoomUpdate($event)"
+				(onChange)="zoomChange($event)"
+				(onFinish)="zoomFinish($event)">
+			</ion-range-slider>
+		</div>
+	<!-- </div> -->
+</div>

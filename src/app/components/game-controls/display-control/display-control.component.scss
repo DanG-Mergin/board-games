@@ -1,0 +1,62 @@
+@import '~sass/variables'; 
+@import '~sass/mixins'; 
+
+
+.display-controls{
+	height: 7em;
+}
+.display-controls {
+	.top, .bottom, .left, .right, .reset{
+		cursor: pointer;
+    	width:1.688em;
+    	height:1.688em;
+    	display: block;
+	}
+	.top, .bottom {
+		margin: 0 auto;
+		display:block;
+	}
+	.top {
+	    margin-bottom: .6em;
+	}
+	.bottom {
+		margin-top: 2.5em;
+		padding-top: .2em;
+    	padding-left: .05em;
+	}
+	.left {
+	    // margin: 1em .8em;
+	    float:left;
+	}
+	.right {
+	    // margin: 1em .6em;
+        padding-left: .1em;
+    	padding-top: .05em;
+    	float:right;
+	}
+	.reset {
+	    float: left;
+    	margin-left: .5em;
+	}
+	.zoom {
+		fa {
+			position:absolute;
+			top: -14%;
+		}
+		fa:first-of-type{
+			left:0;
+		}
+		fa:nth-of-type(2n){
+			right:0;
+		}
+	}
+	// ion-range-slider {
+	// 	&:before{
+	// 		font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f010";
+	// 	}
+	// 	&:after{
+	// 		font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f00e";
+	// 	}
+	// }
+	
+}

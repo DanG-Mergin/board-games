@@ -1,0 +1,11 @@
+@import '~sass/variables'; 
+
+.game-controls{
+	color: $blue-2;
+	.shiny-1 {
+		&:hover {
+			color: $blue-1 !important;
+		}
+		cursor: pointer;
+	}
+}

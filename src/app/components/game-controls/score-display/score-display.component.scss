@@ -1,0 +1,25 @@
+@import '~sass/variables'; 
+
+
+.circle {
+	width: 2em;
+}
+.score-display{
+	font-size: 140%;
+	&.left {
+		justify-content: center !important;
+	}
+}
+.right {
+	// justify-content: flex-end !important;
+	.score-wrap {
+		justify-content: flex-end !important;
+		margin-left: -4%;
+		.right {
+			justify-content: flex-end !important;
+		}
+	}
+	.circle{
+		order:2;
+	}
+}

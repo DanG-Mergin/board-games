@@ -1,0 +1,19 @@
+
+<div *ngFor="let player of players; let i=index;" class="col-6 score-display p-0 d-flex"
+[ngClass]="(i+1) % 2 > 0 ? 'left': 'right'">
+	<div class="row no-gutters score-wrap">
+
+		<div class="col-12 d-flex" [ngClass]="(i+1) % 2 > 0 ? 'left': 'right'">
+			<span>{{player.name}}</span>
+		</div> 
+
+		
+
+		<div class="circle d-flex justify-content-center {{player.team}}">
+			<span class="pt-1">{{player.score}}</span>
+		</div>
+		<time class="mt-1 ml-2 mr-2">{{timeRemaining[i]}}</time>
+	</div>
+</div>
+
+

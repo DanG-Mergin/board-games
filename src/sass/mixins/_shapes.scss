@@ -1,0 +1,21 @@
+@mixin cylinder-sides($num-sides, $translate-x, $translate-y, $translate-z) {
+   // $class-list: null;
+    @for $i from 0 through $num-sides - 1 {
+        $degrees: 360 / $num-sides;
+
+        .s#{$i} {
+        	transform: rotateY(#{$degrees * ($i + 1)}deg) translate3D(#{$translate-x}, #{$translate-y}, #{$translate-z});
+        }
+    }
+}
+
+@mixin triangle($color, $rotate, $width, $height) {
+    	content:'';
+    	border-style: solid;
+    	border-width: 0 #{$width} #{$height} #{$width};
+    	border-color: transparent transparent #{$color} transparent;
+    	transform: rotate(#{$rotate}deg);
+        height: 0;
+        width: 0;
+        display: block;
+}

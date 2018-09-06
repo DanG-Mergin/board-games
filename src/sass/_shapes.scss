@@ -1,0 +1,145 @@
+@import './variables';
+@import './mixins';
+
+/*********************************/
+/*TODO: Add mixins for transforms... they don't appear to be in bootstrap 4
+
+TODO: convert the rest of this to proper scss, and add to the shapes mixin file
+
+/*********************************/
+.cyl-1{
+	@include cylinder-sides(14, -50%, 0, 0.84em);
+}
+
+.circle {
+	&:after {
+		content: '';
+		padding-top: 100%;
+		display: block;
+	}
+	border-radius: 50% 50% !important;
+}
+.square {
+	&:after {
+		content: '';
+		padding-top: 100%;
+		display: block;
+	}
+}
+.round {
+	border-radius: 50%;
+}
+/* note you have to supply a border-color */
+
+/*3D shapes */
+.shape, .face, .face-wrapper, .cr {
+	position: absolute;
+	transform-style: preserve-3d;
+}
+
+.shape {
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	// transform-origin: 50%;
+}
+.face, .face-wrapper {
+	overflow: hidden;
+	transform-origin: 0 0;
+	backface-visibility: hidden;
+	/* hidden by default, prevent blinking and other weird rendering glitchs */
+}
+.face {
+	background-size: 100% 100%!important;
+	background-position: center;
+}
+.face-wrapper .face {
+	left: 100%;
+	width: 100%;
+	height: 100%
+}
+
+.side {
+	left: 50%;
+}
+.cr, .cr .side {
+	height: 100%;
+}
+[class*="cuboid"] .ft, [class*="cuboid"] .bk {
+	width: 100%;
+	height: 100%;
+}
+[class*="cuboid"] .bk {
+	left: 100%;
+}
+[class*="cuboid"] .rt {
+	transform: rotateY(-90deg) translateX(-50%);
+}
+[class*="cuboid"] .lt {
+	transform: rotateY(90deg) translateX(-50%);
+}
+[class*="cuboid"] .tp {
+	transform: rotateX(90deg) translateY(-50%);
+}
+[class*="cuboid"] .bm {
+	transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="cuboid"] .lt {
+	left: 100%;
+}
+[class*="cuboid"] .bm {
+	top: 100%;
+}
+[class*="cylinder"] .tp {
+	transform: rotateX(90deg) translateY(-50%);
+}
+[class*="cylinder"] .bm {
+	transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="cylinder"] .tp, [class*="cylinder"] .bm, [class*="cylinder"] .tp .photon-shader, [class*="cylinder"] .bm .photon-shader {
+	border-radius: 50%;
+}
+[class*="cylinder"] .bm {
+	top: 100%;
+}
+/* .cub-1 styles */
+.cub-1 {
+	transform:translate3D(0em, 0em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	opacity:1;
+	width:25em;
+	height:1em;
+	margin:0em 0 0 -12.5em;
+	transform-origin: 49.5% 50% -0.5em; //align with tokens wrapper
+}
+.cub-1 .ft {
+	transform:translateZ(12.5em);
+}
+.cub-1 .bk {
+	transform:translateZ(-12.5em) rotateY(180deg);
+}
+.cub-1 .rt, .cub-1 .lt {
+	width:25em;
+	height:1em;
+}
+.cub-1 .tp, .cub-1 .bm {
+	width:25em;
+	height:25em;
+}
+/* Cylinder */
+.cyl-1 {
+	opacity: 1;
+	width: 1.69em;
+	height: 0.65em;
+	left: .3em;
+	transform-origin: 45% 50% .85em;
+}
+.cyl-1 .tp, .cyl-1 .bm {
+	width:1.69em;
+	height:1.69em;
+}
+.cyl-1 .side {
+	width:0.42em;
+	height: 0.65em;
+}
+

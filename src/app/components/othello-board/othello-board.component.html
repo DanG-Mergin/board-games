@@ -1,0 +1,41 @@
+<div class="game-board" [ngStyle]="{'font-size': fontSize + '%'}">
+	<div class="scene" [ngStyle]="gameboardStyle">
+		<div class="shape cuboid-1 cub-1">
+			<div class="face ft"></div>
+			<div class="face bk"></div>
+			<div class="face rt"></div>
+			<div class="face lt"></div>
+			<div class="face bm"></div>
+			<div class="face tp">
+				<div class="row m-0" *ngFor="let rows of board.tiles; let r=index;">
+					<div *ngFor="let tile of board.tiles[r]; let c=index;"
+					class="paint-board-tile" 
+					[ngStyle]="{'width': positioning.rowWidth + 'em'}"
+					(click)="addToken(r, c)">
+					<div style="padding-top:100%;"></div>
+				</div>
+				<!-- <div class="row m-0" *ngFor="let rows of board.tiles; let r=index;" style="position: relative;">
+					<div *ngFor="let tile of board.tiles[r]; let c=index;"
+					class="paint-board-tile" 
+					[ngStyle]="{'width': positioning.rowWidth + 'em'}"
+					(click)="addToken(r, c)">
+					<div style="padding-top:100%;"></div>
+					<div style="position: absolute; color: white; top:0;">[{{r}}, {{c}}]</div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<!-- Unfortunately I have to loop twice to render the 3d scene properly -->
+	<div class="game-tokens">
+		<ng-container *ngFor="let rows of board.tiles; let r=index;">
+			<ng-container *ngFor="let tile of board.tiles[r]">
+				<app-othello-piece *ngIf="tile.piece" [piece]="tile.piece"
+				style="position:absolute;"
+				[ngStyle]="{'width': positioning.rowWidth + 'em', 'height': positioning.rowWidth + 'em', 
+				'left': (tile.piece.col * positioning.rowWidth) + 'em', 'top': (tile.piece.row * positioning.rowWidth) + 'em'}">
+			</app-othello-piece>
+		</ng-container>
+	</ng-container>
+</div>
+</div>
+</div>

@@ -1,0 +1,80 @@
+@import './variables';
+@import './mixins';
+@import './variables';
+@import './shapes';
+@import "~bootstrap/scss/bootstrap.scss";
+
+
+.body{
+
+}
+
+.wrapper {
+    max-width: 60em;
+    height: 100vh;
+    position: relative;
+    margin: auto;
+}
+
+/* Begin generic board and token styles */
+
+.scene {
+    position: absolute;
+    transform-style: preserve-3d;
+    width: 50em;
+    height: 50em;
+    top: -15%;
+    left: -14%;
+}
+.game-board {
+    perspective: 800px;
+    position: absolute;
+    overflow: hidden;
+    width: 40em;
+    height: 40em;
+    background: transparent;
+    font-size: 125%;
+}
+.game-tokens {
+	width: 50%;
+    height: 50%;
+    position: absolute;
+    margin: 0 auto;
+    border: 1px solid red;
+    transform-style: preserve-3d;
+    top: 12.5em;
+    left: 12.5em;
+    transform-origin: 49% 50% 1em; //must align with the board
+    transform: rotateX(90deg) translateZ(.5em) translateY(-1em);
+}
+.heads {
+    background-color: $cream-1;
+}
+.tails {
+    background-color: $red-1;
+}
+//TODO: this should be an extends
+.paint-board-tile, .lt, .rt, .ft, .bk, .bm {
+	background-color: $grey-1;
+	box-shadow: inset -1px -1px 3px 2px $blue-glow-1;
+	border: 1px solid $grey-1;
+}
+
+.right-nav {
+    float: right;
+    margin-top: 7%;
+    width:7.1em;
+}
+.irs {
+    margin-top: -1em;
+}
+.irs .irs-bar, .irs .irs-bar-edge {
+    border-top: 1px solid $grey-1;
+    border-bottom: 1px solid $grey-1;
+    background: $blue-1;
+    background: $blue-shine-1;
+}
+
+
+
+

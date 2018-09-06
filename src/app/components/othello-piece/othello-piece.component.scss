@@ -1,0 +1,55 @@
+@import '~sass/variables'; 
+
+.side {
+  // background: linear-gradient(to bottom, #FFEFBD 0%,#FFEFBD 50%,#53131e 50%,#53131e 100%);
+  background: linear-gradient(to bottom, #FFEFBD 0%,#FFEFBD 50%,#c01616 50%,#c01616 100%);
+
+}
+.tp {
+  background-color: #FFEFBD;
+}
+.bm {
+  background-color: #c01616;
+}
+
+@keyframes ani-tails {
+	0%{
+		transform: rotateX(-94deg) rotateY(0deg) rotateZ(0deg);
+    	top: .95em;
+    	transform-origin: center 100% .45em;
+	}
+	100%{
+		transform: rotateX(88deg) rotateY(0deg) rotateZ(0deg);
+		top: -.05em;
+	}
+}
+
+@keyframes ani-heads {
+	0%{
+		transform: rotateX(88deg) rotateY(0deg) rotateZ(0deg);
+		top: -.05em;
+	}
+	100%{
+		transform: rotateX(-94deg) rotateY(0deg) rotateZ(0deg);
+    	top: .95em;
+    	transform-origin: center 100% .45em;
+		
+	}
+}
+
+.tails {
+	transform: rotateX(88deg) rotateY(0deg) rotateZ(0deg);
+	//transform: rotateX(445deg) rotateY(0deg) rotateZ(0deg);
+    top: 10%;
+    left: 18%;
+	transition: all .4s ease;
+	background-color: transparent;
+}
+.heads {
+    transform: rotateX(-94deg) rotateY(0deg) rotateZ(0deg);
+    top: 40%;
+    left: 18%;
+	transform-origin: center 100% .45em;
+	transition: all .4s ease;
+	background-color: transparent;
+}
